@@ -12,6 +12,10 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { UsersComponent } from './pages/users/users.component';
 import { FormsModule } from '@angular/forms';
+import { GalleryListComponent } from './pages/gallery/gallery-list/gallery-list.component';
+import { CreateGalleryComponent } from './pages/gallery/create-gallery/create-gallery.component';
+import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
+import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     GalleryComponent,
     NotFoundComponent,
-    UsersComponent
+    UsersComponent,
+    GalleryListComponent,
+    CreateGalleryComponent,
+    EditGalleryComponent,
+    GalleryDataComponent
   ],
   imports: [
     BrowserModule,

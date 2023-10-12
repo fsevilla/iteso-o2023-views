@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { User } from '../interfaces/user';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    const url: string = 'https://jsonplaceholder.typicode.com/users';
+    const url: string = environment.apiUrl + 'users';
     return this.httpClient.get<User[]>(url);
   }
 
