@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-user-data',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-data.component.scss']
 })
 export class UserDataComponent {
+
+  @Input('data') user: User = { name: '', email: '' }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { User } from 'src/app/shared/interfaces/user';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -12,6 +12,9 @@ export class UsersListComponent {
 
   users: User[] = [];
 
+  currentUser: User = { name: '', email: ''};
+  @Output() onUserSelected: EventEmitter<User> = new EventEmitter<User>();
+
   constructor(private userService: UserService) {
     console.log(userService);
   } 
@@ -20,6 +23,11 @@ export class UsersListComponent {
     this.userService.getUsers().subscribe((response: User[]) => {
       this.users = response;
     });
+  }
+
+  selectUser(user: User) {
+    this.currentUser = user;
+    this.onUserSelected.emit(user);
   }
 
 
