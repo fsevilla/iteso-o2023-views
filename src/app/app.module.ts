@@ -16,6 +16,8 @@ import { GalleryListComponent } from './pages/gallery/gallery-list/gallery-list.
 import { CreateGalleryComponent } from './pages/gallery/create-gallery/create-gallery.component';
 import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
 import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.component';
+import { UsersListComponent } from './pages/users/users-list/users-list.component';
+import { UserDataComponent } from './pages/users/user-data/user-data.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.
     GalleryListComponent,
     CreateGalleryComponent,
     EditGalleryComponent,
-    GalleryDataComponent
+    GalleryDataComponent,
+    UsersListComponent,
+    UserDataComponent
   ],
   imports: [
     BrowserModule,

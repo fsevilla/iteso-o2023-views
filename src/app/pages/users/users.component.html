@@ -1,14 +1,9 @@
 <h2>Lista de Usuarios</h2>
-
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-    </tr>
-
-    <tr *ngFor="let user of users">
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-    </tr>
-    
-</table>
+<div class="panels">
+    <div>
+        <app-users-list></app-users-list>
+    </div>
+    <div>
+        <app-user-data></app-user-data>
+    </div>
+</div>
