@@ -15,4 +15,8 @@ export class UsersComponent {
     this.selectedUser = {...user};
   }
 
+  doOnUserReset() {
+    this.selectedUser = { name: '', email: '' }
+  }
+
 }

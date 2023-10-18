@@ -2,9 +2,9 @@
 <input type="text" [(ngModel)]="selectedUser.name">
 <div class="panels">
     <div>
-        <app-users-list (onUserSelected)="doOnUserSelected($event)"></app-users-list>
+        <app-users-list [currentUser]="selectedUser" (onUserSelected)="doOnUserSelected($event)"></app-users-list>
     </div>
     <div>
-        <app-user-data [data]="selectedUser"></app-user-data>
+        <app-user-data (onUserReset)="doOnUserReset()" [data]="selectedUser"></app-user-data>
     </div>
 </div>

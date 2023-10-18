@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { User } from 'src/app/shared/interfaces/user';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -12,7 +12,7 @@ export class UsersListComponent {
 
   users: User[] = [];
 
-  currentUser: User = { name: '', email: ''};
+  @Input() currentUser: User = { name: '', email: ''};
   @Output() onUserSelected: EventEmitter<User> = new EventEmitter<User>();
 
   constructor(private userService: UserService) {

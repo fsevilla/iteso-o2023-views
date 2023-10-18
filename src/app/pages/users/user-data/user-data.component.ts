@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { User } from 'src/app/shared/interfaces/user';
 
@@ -10,5 +10,11 @@ import { User } from 'src/app/shared/interfaces/user';
 export class UserDataComponent {
 
   @Input('data') user: User = { name: '', email: '' }
+  @Output() onUserReset: EventEmitter<void> = new EventEmitter();
+
+  clearUser() {
+    this.user = { name: '', email: '' }
+    this.onUserReset.emit();
+  }
 
 }

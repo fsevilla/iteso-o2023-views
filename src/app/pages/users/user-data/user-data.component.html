@@ -1,5 +1,10 @@
 <h2>Selected User</h2>
-<div>
+<div *ngIf="!user.id">
+    <h4>Please select a user</h4>
+</div>
+<div *ngIf="user.id">
     <strong>Name: </strong>
     <span>{{user.name}}</span>
 </div>
+
+<button (click)="clearUser()">Clear</button>
