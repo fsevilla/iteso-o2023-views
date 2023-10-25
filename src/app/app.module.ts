@@ -11,13 +11,16 @@ import { LoginComponent } from './pages/login/login.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { UsersComponent } from './pages/users/users.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GalleryListComponent } from './pages/gallery/gallery-list/gallery-list.component';
 import { CreateGalleryComponent } from './pages/gallery/create-gallery/create-gallery.component';
 import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
 import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.component';
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { UserDataComponent } from './pages/users/user-data/user-data.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material/material.module';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +37,17 @@ import { UserDataComponent } from './pages/users/user-data/user-data.component';
     EditGalleryComponent,
     GalleryDataComponent,
     UsersListComponent,
-    UserDataComponent
+    UserDataComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

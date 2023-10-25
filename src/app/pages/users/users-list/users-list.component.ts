@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges } from '@angular/core';
 
 import { User } from 'src/app/shared/interfaces/user';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -8,7 +8,7 @@ import { UserService } from 'src/app/shared/services/user.service';
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.scss']
 })
-export class UsersListComponent {
+export class UsersListComponent implements OnInit, OnChanges {
 
   users: User[] = [];
 
@@ -28,6 +28,11 @@ export class UsersListComponent {
   selectUser(user: User) {
     this.currentUser = user;
     this.onUserSelected.emit(user);
+    this.userService.setUser(user);
+  }
+
+  ngOnChanges() {
+    this.userService.setUser(this.currentUser);
   }
 
 

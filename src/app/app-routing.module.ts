@@ -9,6 +9,7 @@ import { GalleryListComponent } from './pages/gallery/gallery-list/gallery-list.
 import { CreateGalleryComponent } from './pages/gallery/create-gallery/create-gallery.component';
 import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.component';
 import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: ':id', component: GalleryDataComponent },
     { path: ':id/edit', component: EditGalleryComponent }
   ] },
+  { path: 'signup', component: SignupComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

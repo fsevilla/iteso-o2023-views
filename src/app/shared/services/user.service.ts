@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 import { User } from '../interfaces/user';
 import { environment } from 'src/environments/environment';
@@ -11,23 +11,10 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  private users: User[] = [
-    {
-      id: '1',
-      name: 'Juan Perez',
-      email: 'juanperez@iteso.mx'
-    },
-    {
-      id: '2',
-      name: 'John Smith',
-      email: 'johnsmith@iteso.mx'
-    },
-    {
-      id: '3',
-      name: 'Jane Doe',
-      email: 'janedoe@iteso.mx'
-    }
-  ]
+  selectedUser: BehaviorSubject<User> = new BehaviorSubject<User>({
+    name: '',
+    email: ''
+  });
 
   constructor(private httpClient: HttpClient) { }
 
@@ -36,5 +23,8 @@ export class UserService {
     return this.httpClient.get<User[]>(url);
   }
 
+  setUser(user: User) {
+    this.selectedUser.next(user);
+  }
 
 }
