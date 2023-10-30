@@ -9,7 +9,7 @@
         <th>Email</th>
     </tr>
 
-    <tr [ngClass]="{'active': currentUser.id === user.id}" *ngFor="let user of users" (click)="selectUser(user)">
+    <tr [appHighlight]="currentUser.id === user.id" *ngFor="let user of users" (click)="selectUser(user)">
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
     </tr>

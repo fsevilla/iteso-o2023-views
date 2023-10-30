@@ -21,6 +21,8 @@ import { UserDataComponent } from './pages/users/user-data/user-data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { SignupComponent } from './pages/signup/signup.component';
+import { HighlightDirective } from './shared/directives/highlight.directive';
+import { LoginStatusDirective } from './shared/directives/login-status.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SignupComponent } from './pages/signup/signup.component';
     GalleryDataComponent,
     UsersListComponent,
     UserDataComponent,
-    SignupComponent
+    SignupComponent,
+    HighlightDirective,
+    LoginStatusDirective
   ],
   imports: [
     BrowserModule,

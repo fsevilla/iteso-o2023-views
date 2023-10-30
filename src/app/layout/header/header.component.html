@@ -1,7 +1,9 @@
 <mat-toolbar color="primary">
     <span>MyApp</span>
     <span class="spacer"></span>
-    <a mat-button routerLink="users">Users</a>
-    <a mat-button routerLink="photos">Photos</a>
-    <a mat-button routerLink="signup">Registro</a>
+    <a *ngIf="!loginStatus" mat-button routerLink="login">Login</a>
+    <a *ngIf="loginStatus" mat-button routerLink="users">Users</a>
+    <a *ngIf="loginStatus" mat-button routerLink="photos">Photos</a>
+    <a *ngIf="!loginStatus" mat-button routerLink="signup">Registro</a>
+    <a *ngIf="loginStatus" (click)="logout()">Log out</a>
 </mat-toolbar>

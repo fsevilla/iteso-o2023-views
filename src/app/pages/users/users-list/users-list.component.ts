@@ -12,7 +12,7 @@ export class UsersListComponent implements OnInit, OnChanges {
 
   users: User[] = [];
 
-  @Input() currentUser: User = { name: '', email: ''};
+  @Input() currentUser: User = { id: '1', name: '', email: ''};
   @Output() onUserSelected: EventEmitter<User> = new EventEmitter<User>();
 
   constructor(private userService: UserService) {
