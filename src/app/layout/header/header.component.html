@@ -6,4 +6,6 @@
     <a *ngIf="loginStatus" mat-button routerLink="photos">Photos</a>
     <a *ngIf="!loginStatus" mat-button routerLink="signup">Registro</a>
     <a *ngIf="loginStatus" (click)="logout()">Log out</a>
+    <a *appLoginStatus="true">Ejemplo SI</a>
+    <a *appLoginStatus="false">Ejemplo NO</a>
 </mat-toolbar>

@@ -10,18 +10,25 @@ import { CreateGalleryComponent } from './pages/gallery/create-gallery/create-ga
 import { GalleryDataComponent } from './pages/gallery/gallery-data/gallery-data.component';
 import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { UnauthGuard } from './shared/guards/unauth.guard';
+import { RoleGuard } from './shared/guards/role.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'photos', component: GalleryComponent, children: [
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [UnauthGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard, RoleGuard], data: {
+    role: 'admin'
+  } },
+  { path: 'photos', component: GalleryComponent, canActivate: [AuthGuard, RoleGuard], children: [
     { path: '', component: GalleryListComponent }, 
     { path: 'create', component: CreateGalleryComponent },
     { path: ':id', component: GalleryDataComponent },
     { path: ':id/edit', component: EditGalleryComponent }
-  ] },
-  { path: 'signup', component: SignupComponent },
+  ], data: {
+    role: 'user'
+  } },
+  { path: 'signup', component: SignupComponent, canActivate: [UnauthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 

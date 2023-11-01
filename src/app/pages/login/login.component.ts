@@ -10,7 +10,7 @@ import { TokenService } from 'src/app/shared/services/token.service';
 })
 export class LoginComponent {
 
-  constructor(private tokenService: TokenService, private router: Router) {}
+  constructor(private tokenService: TokenService, private router: Router) { }
 
   login() {
 
